@@ -38,7 +38,7 @@ export default async function ProfilePage() {
                         {/* Avatar */}
                         <div className="flex justify-center -mt-16 mb-4">
                             <Avatar className="w-32 h-32 border-4 border-white shadow-lg">
-                                <AvatarImage src={user?.image || ""} alt={user?.name} />
+                                <AvatarImage src={user?.image ?? ""} alt={user?.name ?? ""} />
                                 <AvatarFallback className="text-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-white">
                                     {user?.name?.slice(0, 2).toUpperCase()}
                                 </AvatarFallback>

@@ -5,6 +5,20 @@ import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import prisma from "@/lib/prisma";
+import NextAuth, { DefaultSession } from "next-auth";
+
+declare module "next-auth" {
+  interface Session {
+    user: {
+      id?: string;
+    } & DefaultSession["user"];
+  }
+
+  interface User {
+    id?: string;
+  }
+}
+
 
 export const authOptions: AuthOptions = {
 	adapter: PrismaAdapter(prisma),

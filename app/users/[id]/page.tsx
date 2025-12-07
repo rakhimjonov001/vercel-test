@@ -1,6 +1,6 @@
 import React from "react";
 
-const page: React.FC = async ({ params }) => {
+const page: React.FC = async ({ params }: any) => {
 	const id = (await params).id;
 	const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
 	const user = await res.json();

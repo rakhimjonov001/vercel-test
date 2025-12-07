@@ -17,11 +17,12 @@ export default async function NewPost() {
 		const title = formData.get("title") as string;
 		const content = formData.get("content") as string;
 
+
 		await prisma.post.create({
 			data: {
 				title,
 				content,
-				authorId: session?.user?.id,
+				authorId: session!.user!.id!,
 			},
 		});
 

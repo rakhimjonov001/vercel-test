@@ -13,8 +13,14 @@ interface User {
 }
 
 interface ProfileContentProps {
-    user: User;
-}
+    user: {
+      id?: string;
+      name?: string | null;
+      email?: string | null;
+      image?: string | null;
+    };
+  }
+  
 
 export default function ProfileContent({ user }: ProfileContentProps) {
     const [isEditing, setIsEditing] = useState(false);
