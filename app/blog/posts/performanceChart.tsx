@@ -65,7 +65,7 @@ const CustomXAxisTick = (props: any, todayKey: string) => {
 
 
 export function PerformanceChart() {
-  const API_URL = 'http://localhost:3000/api/statistics';
+  const API_URL = 'api/statistics';
 
   const [apiData, setApiData] = useState<ApiData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
