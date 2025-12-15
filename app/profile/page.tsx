@@ -27,29 +27,22 @@ export default async function ProfilePage() {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-md mx-auto">
-                <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-                 
-                    <div className="h-32 bg-gradient-to-r from-blue-500 to-blue-600"></div>
-
-                    {/* Content */}
-                    <div className="px-6 pb-6">
-                        {/* Avatar */}
-                        <div className="flex justify-center -mt-16 mb-4">
-                            <Avatar className="w-32 h-32 border-4 border-white shadow-lg">
+        <div className="min-h-screen bg-gradient-to-br from-black via-zinc-950 to-slate-950 py-12 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto">
+                <div className="overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-950/80 shadow-[0_0_35px_rgba(0,0,0,0.55)] backdrop-blur-xl">
+                    <div className="h-36 bg-gradient-to-r from-indigo-500/50 via-purple-500/40 to-blue-500/50" />
+                    <div className="px-6 pb-8 -mt-16">
+                        <div className="flex justify-center mb-6">
+                            <Avatar className="w-28 h-28 border-4 border-zinc-900 shadow-[0_0_25px_rgba(99,102,241,0.35)]">
                                 <AvatarImage src={user?.image ?? ""} alt={user?.name ?? ""} />
-                                <AvatarFallback className="text-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-white">
+                                <AvatarFallback className="text-2xl bg-gradient-to-br from-indigo-600 to-blue-500 text-white">
                                     {user?.name?.slice(0, 2).toUpperCase()}
                                 </AvatarFallback>
                             </Avatar>
                         </div>
-
-                        {/* User Info with Edit */}
                         <ProfileContent user={user} />
                     </div>
                 </div>
-
             </div>
         </div>
     );
